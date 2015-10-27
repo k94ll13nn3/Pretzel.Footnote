@@ -1,5 +1,6 @@
 ﻿using DotLiquid;
 using NUnit.Framework;
+using System;
 
 namespace Pretzel.Footnote.Tests
 {
@@ -57,6 +58,22 @@ namespace Pretzel.Footnote.Tests
 
             Template templateRendered = Template.Parse("{% footnote_render %}");
             Assert.AreEqual(string.Empty, templateRendered.Render());
+        }
+
+        [Test]
+        public void TestFootnoteId()
+        {
+            Template.RegisterTag<FootnoteTag>("footnote");
+            Template.RegisterTag<FootnoteIdTag>("footnote_id");
+
+            Template.Parse("{% footnote test %}");
+            Template templateOk1 = Template.Parse("{% footnote_id 1 %}");
+
+            Assert.AreEqual("<sup><a href=\"#fn:1\">1</a></sup>", templateOk1.Render());
+
+            Assert.Throws<ArgumentException>(() => Template.Parse("{% footnote_id 2 %}"));
+            Assert.Throws<ArgumentException>(() => Template.Parse("{% footnote_id test %}"));
+            Assert.Throws<ArgumentException>(() => Template.Parse("{% footnote_id %}"));
         }
     }
 }

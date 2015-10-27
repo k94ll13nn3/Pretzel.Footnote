@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FootnoteCore.cs" />
+    <Compile Include="FootnoteIdTag.cs" />
     <Compile Include="FootnoteRenderTag.cs" />
     <Compile Include="FootnoteTag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
