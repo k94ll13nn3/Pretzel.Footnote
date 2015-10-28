@@ -23,7 +23,7 @@ To render the footnote list :
 {% footnote_render %}
 ```
 
-The rendered output will be an ordered list (`<ol></ol>`) in a (`<div class="footnotes"></div>`).
+The rendered output will be an ordered list (`<ol></ol>`) in a `<div class="footnotes"></div>`.
 
 #### Warnings
 
