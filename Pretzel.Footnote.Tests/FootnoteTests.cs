@@ -28,7 +28,7 @@ namespace Pretzel.Footnote.Tests
             Assert.AreEqual("<sup><a href=\"#fn:2\">2</a></sup>", templateOk2.Render());
             Assert.AreEqual("<sup><a href=\"#fn:3\">3</a></sup>", templateOk3.Render());
 
-            Assert.AreEqual("<div class=\"footnotes\"><hr /><ol><li id=\"fn:1\"><p>test</p></li><li id=\"fn:2\"><p>\"lorem ipsum\"</p></li><li id=\"fn:3\"><p>[Link](www.google.com)</p></li></ol></div>", templateRendered.Render());
+            Assert.AreEqual("<div class=\"footnotes\"><hr /><ol><li id=\"fn:1\">\n\ntest\n\n</li><li id=\"fn:2\">\n\n\"lorem ipsum\"\n\n</li><li id=\"fn:3\">\n\n[Link](www.google.com)\n\n</li></ol></div>", templateRendered.Render());
         }
 
         [Test]
@@ -40,11 +40,11 @@ namespace Pretzel.Footnote.Tests
             Template.Parse("{% footnote test %}");
             Template.Parse("{% footnote \"lorem ipsum\" %}");
             var templateRendered1 = Template.Parse("{% footnote_render %}");
-            Assert.AreEqual("<div class=\"footnotes\"><hr /><ol><li id=\"fn:1\"><p>test</p></li><li id=\"fn:2\"><p>\"lorem ipsum\"</p></li></ol></div>", templateRendered1.Render());
+            Assert.AreEqual("<div class=\"footnotes\"><hr /><ol><li id=\"fn:1\">\n\ntest\n\n</li><li id=\"fn:2\">\n\n\"lorem ipsum\"\n\n</li></ol></div>", templateRendered1.Render());
 
             Template.Parse("{% footnote [Link](www.google.com) %}");
             var templateRendered2 = Template.Parse("{% footnote_render %}");
-            Assert.AreEqual("<div class=\"footnotes\"><hr /><ol><li id=\"fn:1\"><p>[Link](www.google.com)</p></li></ol></div>", templateRendered2.Render());
+            Assert.AreEqual("<div class=\"footnotes\"><hr /><ol><li id=\"fn:1\">\n\n[Link](www.google.com)\n\n</li></ol></div>", templateRendered2.Render());
 
             var templateRendered3 = Template.Parse("{% footnote_render %}");
             Assert.AreEqual(string.Empty, templateRendered3.Render());

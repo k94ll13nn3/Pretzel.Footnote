@@ -23,7 +23,7 @@ namespace Pretzel.Footnote
 
                 foreach (var footnote in FootnoteCore.Footnotes)
                 {
-                    result.Write($"<li id=\"fn:{footnote.Key}\"><p>{footnote.Value}</p></li>");
+                    result.Write($"<li id=\"fn:{footnote.Key}\">\n\n{footnote.Value}\n\n</li>");
                 }
 
                 result.Write("</ol></div>");
