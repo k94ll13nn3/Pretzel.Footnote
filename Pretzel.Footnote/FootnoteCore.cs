@@ -3,41 +3,27 @@
 namespace Pretzel.Footnote
 {
     /// <summary>
-    /// The core class that will store the footnotes.
+    /// This class will store all the known footnotes during the generation process.
     /// </summary>
     internal static class FootnoteCore
     {
-        /// <summary>
-        /// The footnote list.
-        /// </summary>
-        private static Dictionary<int, string> footnotes = new Dictionary<int, string>();
+        private static readonly Dictionary<int, string> FootnotesValue = new Dictionary<int, string>();
 
-        /// <summary>
-        /// Gets the footnote list.
-        /// </summary>
-        public static Dictionary<int, string> Footnotes => footnotes;
+        public static Dictionary<int, string> Footnotes => FootnotesValue;
 
-        /// <summary>
-        /// Adds a footnote.
-        /// </summary>
-        /// <param name="fn">The footnote.</param>
-        /// <returns>The id of the footnote.</returns>
         public static int AddFootnote(string fn)
         {
-            if (!footnotes.ContainsValue(fn))
+            if (!FootnotesValue.ContainsValue(fn))
             {
-                footnotes.Add(footnotes.Count + 1, fn);
+                FootnotesValue.Add(FootnotesValue.Count + 1, fn);
             }
 
-            return footnotes.Count;
+            return FootnotesValue.Count;
         }
 
-        /// <summary>
-        /// Clears the footnote list.
-        /// </summary>
         public static void Clear()
         {
-            footnotes.Clear();
+            FootnotesValue.Clear();
         }
     }
 }
