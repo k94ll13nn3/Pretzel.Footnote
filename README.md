@@ -33,4 +33,4 @@ The rendered output will be an ordered list (`<ol></ol>`) in a `<div class="foot
 
 ### Installation
 
-Compile the solution `Pretzel.Footnote.sln` and copy `Pretzel.Footnote.dll` to the `_plugins` folder at the root of your site folder (VS2015 needed).
+Download the latest [release](https://github.com/k94ll13nn3/Pretzel.Footnote/releases) and copy `Pretzel.Footnote.dll` to the `_plugins` folder at the root of your site folder.
