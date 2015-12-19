@@ -1,4 +1,8 @@
 # Pretzel.Footnote
+
+[![Build status](https://ci.appveyor.com/api/projects/status/prqojnauuomddgm6?svg=true)](https://ci.appveyor.com/project/k94ll13nn3/pretzel-footnote)
+[![Release](https://img.shields.io/github/release/k94ll13nn3/Pretzel.Footnote.svg)](https://github.com/k94ll13nn3/Pretzel.Footnote/releases/latest)
+
 A footnote tag for Pretzel
 
 This is a plugin for the static site generation tool [Pretzel](https://github.com/Code52/pretzel).
@@ -33,4 +37,4 @@ The rendered output will be an ordered list (`<ol></ol>`) in a `<div class="foot
 
 ### Installation
 
-Download the latest [release](https://github.com/k94ll13nn3/Pretzel.Footnote/releases) and copy `Pretzel.Footnote.dll` to the `_plugins` folder at the root of your site folder.
+Download the [latest release](https://github.com/k94ll13nn3/Pretzel.Footnote/releases/latest) and copy `Pretzel.Footnote.dll` to the `_plugins` folder at the root of your site folder.

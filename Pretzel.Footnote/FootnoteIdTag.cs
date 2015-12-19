@@ -1,8 +1,9 @@
-﻿using System;
+﻿// Pretzel.Footnote plugin
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.Composition;
 using DotLiquid;
 using Pretzel.Logic.Extensibility;
-using System.ComponentModel.Composition;
 
 namespace Pretzel.Footnote
 {

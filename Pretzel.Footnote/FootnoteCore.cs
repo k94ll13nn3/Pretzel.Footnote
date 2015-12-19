@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿// Pretzel.Footnote plugin
+using System.Collections.Generic;
 
 namespace Pretzel.Footnote
 {
